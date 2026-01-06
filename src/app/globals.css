@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+@theme {
+  /* 颜色配置 */
+  --color-brand-500: #3d3a3a;
+  --color-brand-600: #4338ca;
+  --color-primary: #ed4864;
+  --color-primary-black: #ffffff;
+  
+  /* 间距 */
+  --spacing-18: 4.5rem;
+  
+  /* 动画 */
+  --animate-fade: fadeIn 0.3s ease-in-out;
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root.dark {
+  --background: #1f2937;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
+
+/* 媒体查询模式--暗黑模式 */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 自定义变体 dark */
+@custom-variant dark (&:where(.dark, .dark *));
