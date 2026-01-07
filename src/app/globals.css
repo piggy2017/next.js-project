@@ -1,22 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  /* 颜色配置 */
-  --color-brand-500: #3d3a3a;
-  --color-brand-600: #4338ca;
-  --color-primary: #ed4864;
-  --color-primary-black: #ffffff;
+  /* 1. 将 Tailwind 的配置指向 CSS 变量 */
+  /* 这里不写具体的颜色值，而是用 var() 指向自定义变量 */
+  --color-primary: var(--theme-primary);
+  --color-bg-base: var(--theme-bg);
+  --color-text-base: var(--theme-text);
   
-  /* 间距 */
+  /* 保持之前的其他配置 */
   --spacing-18: 4.5rem;
-  
-  /* 动画 */
-  --animate-fade: fadeIn 0.3s ease-in-out;
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+}
+
+/* 2. 定义具体的颜色值 */
+
+/* === 默认主题 (比如红色) === */
+:root {
+  --theme-primary: #ed4864; /* 红色 */
+  --theme-bg: #ffffff;
+  --theme-text: #1a1a1a;
+}
+
+/* === 黄色主题 === */
+[data-theme="yellow"] {
+  --theme-primary: #eab308; /* 黄色 */
+  --theme-bg: #fffbeb; /* 浅黄背景 */
+  --theme-text: #422006; /* 深棕文字 */
+}
+
+/* === 蓝色主题 === */
+[data-theme="blue"] {
+  --theme-primary: #3b82f6; /* 蓝色 */
+  --theme-bg: #eff6ff;
+  --theme-text: #1e3a8a;
+}
+
+/* === 暗黑模式适配 (可选) === */
+/* 如果你想让暗黑模式叠加在多主题上，或者作为一个独立主题 */
+[data-theme="dark"] {
+  --theme-bg: #0f172a;
+  --theme-text: #f8fafc;
+  /* 在暗黑模式下，Primary 颜色可能需要微调 */
+  --theme-primary: #f472b6; 
 }
 
 :root {
