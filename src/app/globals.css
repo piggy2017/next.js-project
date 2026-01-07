@@ -6,7 +6,7 @@
   --color-primary: var(--theme-primary);
   --color-bg-base: var(--theme-bg);
   --color-text-base: var(--theme-text);
-  
+
   /* 保持之前的其他配置 */
   --spacing-18: 4.5rem;
 }
@@ -15,21 +15,26 @@
 
 /* === 默认主题 (比如红色) === */
 :root {
-  --theme-primary: #ed4864; /* 红色 */
+  --theme-primary: #ed4864;
+  /* 红色 */
   --theme-bg: #ffffff;
   --theme-text: #1a1a1a;
 }
 
 /* === 黄色主题 === */
 [data-theme="yellow"] {
-  --theme-primary: #eab308; /* 黄色 */
-  --theme-bg: #fffbeb; /* 浅黄背景 */
-  --theme-text: #422006; /* 深棕文字 */
+  --theme-primary: #eab308;
+  /* 黄色 */
+  --theme-bg: #fffbeb;
+  /* 浅黄背景 */
+  --theme-text: #422006;
+  /* 深棕文字 */
 }
 
 /* === 蓝色主题 === */
 [data-theme="blue"] {
-  --theme-primary: #3b82f6; /* 蓝色 */
+  --theme-primary: #3b82f6;
+  /* 蓝色 */
   --theme-bg: #eff6ff;
   --theme-text: #1e3a8a;
 }
@@ -40,7 +45,7 @@
   --theme-bg: #0f172a;
   --theme-text: #f8fafc;
   /* 在暗黑模式下，Primary 颜色可能需要微调 */
-  --theme-primary: #f472b6; 
+  --theme-primary: #f472b6;
 }
 
 :root {
@@ -70,3 +75,17 @@ body {
 
 /* 自定义变体 dark */
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+/* @apply 指令，可以在 CSS 文件中将一组常用的工具类组合成一个自定义的类，这样就可以减少 HTML 中的重复代码 */
+.groupClass {
+  @apply p-2 text-base text-current cursor-pointer;
+}
+
+.avatar {
+  @apply w-16 h-16 rounded-full border-2 border-white shadow-md;
+}
+
+.button {
+  @apply px-4 py-2 bg-blue-500 text-white rounded-lg;
+}
