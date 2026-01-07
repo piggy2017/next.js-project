@@ -73,6 +73,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 添加平滑过渡 */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
 /* 自定义变体 dark */
 @custom-variant dark (&:where(.dark, .dark *));
 
