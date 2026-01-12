@@ -1,0 +1,44 @@
+{
+  "home": {
+    "title": "Multi-Theme Switching Demo",
+    "description": "The color of this text will also change with the theme.",
+    "primaryBox": "I am a Primary Color Block",
+    "defaultColor": "Default Color",
+    "customColor": "Test Custom Color",
+    "goToNews": "Go to News List",
+    "goToGoods": "Go to Goods List",
+    "tailwindTip": "Tailwind makes it easy to create reusable styles by using @apply, @layer, and variants, reducing code duplication and improving development efficiency and maintainability",
+    "applyDesc": "@apply: Combine common utility classes into a custom class to reduce code duplication.",
+    "layerDesc": "@layer: Define style layers to organize different style combinations for easier management.",
+    "variantsDesc": "variants: Extend utility classes so styles can change based on states (such as responsive, hover, focus, etc.).",
+    "clickMe": "Click Me"
+  },
+  "news": {
+    "listTitle": "News List",
+    "newsTitle1": "News Title 1",
+    "newsTitle2": "News Title 2",
+    "newsContent1": "News Content 1",
+    "newsContent2": "News Content 2",
+    "detailTitle": "News Detail",
+    "paramLabel": "Parameter Passed---ID"
+  },
+  "goods": {
+    "listTitle": "Goods List",
+    "goodsTitle1": "Product 1",
+    "goodsTitle2": "Product 2",
+    "goodsContent1": "This is the content of Product 1",
+    "goodsContent2": "This is the content of Product 2",
+    "detailTitle": "Product Detail",
+    "idLabel": "ID"
+  },
+  "theme": {
+    "current": "Current Theme",
+    "light": "Default (Red)",
+    "yellow": "Yellow Theme",
+    "blue": "Blue Theme",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "switch": "Switch Language"
+  }
+}

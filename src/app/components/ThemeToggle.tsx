@@ -2,17 +2,20 @@
  * @Author: 孙林 1164700321@qq.com
  * @Date: 2026-01-06 16:10:45
  * @LastEditors: 孙林
- * @LastEditTime: 2026-01-06 18:04:37
+ * @LastEditTime: 2026-01-09 11:00:00
  * @Description: 
  */
 "use client"
 
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { useTranslation } from '@/i18n/client'
+import { type Language } from '@/i18n/config'
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ lang }: { lang: Language }) {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const { t } = useTranslation(lang)
 
   // 防止水合不匹配错误
   useEffect(() => {
@@ -23,34 +26,34 @@ export default function ThemeToggle() {
 
   return (
     <div className="flex gap-4 p-4 border rounded-lg bg-bg-base">
-      <p className="text-text-base mb-2">当前主题: {theme}</p>
+      <p className="text-text-base mb-2">{t('theme.current')}: {theme}</p>
       
       <button 
         className="px-4 py-2 bg-gray-200 rounded text-black"
         onClick={() => setTheme('light')}
       >
-        默认(红)
+        {t('theme.light')}
       </button>
 
       <button 
         className="px-4 py-2 bg-yellow-400 rounded text-black"
         onClick={() => setTheme('yellow')}
       >
-        黄色主题
+        {t('theme.yellow')}
       </button>
 
       <button 
         className="px-4 py-2 bg-blue-500 rounded text-white"
         onClick={() => setTheme('blue')}
       >
-        蓝色主题
+        {t('theme.blue')}
       </button>
       
       <button 
         className="px-4 py-2 bg-gray-800 rounded text-white"
         onClick={() => setTheme('dark')}
       >
-        暗黑模式
+        {t('theme.dark')}
       </button>
     </div>
   )

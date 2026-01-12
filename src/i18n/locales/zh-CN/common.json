@@ -1,0 +1,44 @@
+{
+  "home": {
+    "title": "多主题切换演示",
+    "description": "这段文字的颜色也会随主题改变。",
+    "primaryBox": "我是 Primary 颜色的方块",
+    "defaultColor": "默认颜色",
+    "customColor": "测试自定义颜色",
+    "goToNews": "前往新闻列表",
+    "goToGoods": "前往商品列表",
+    "tailwindTip": "Tailwind通过使用 @apply、@layer 和 variants 等功能,你可以轻松创建可复用的样式,减少代码重复,提高开发效率和可维护性",
+    "applyDesc": "@apply:将常用的工具类组合成一个自定义类,减少重复代码。",
+    "layerDesc": "@layer:定义样式层级,将不同的样式组合组织起来,便于管理。",
+    "variantsDesc": "variants:扩展工具类,使得样式可以根据状态(如响应式、悬停、聚焦等)变化。",
+    "clickMe": "点击我"
+  },
+  "news": {
+    "listTitle": "新闻列表",
+    "newsTitle1": "新闻标题1",
+    "newsTitle2": "新闻标题2",
+    "newsContent1": "新闻内容1",
+    "newsContent2": "新闻内容2",
+    "detailTitle": "新闻详情页",
+    "paramLabel": "参数传递---ID"
+  },
+  "goods": {
+    "listTitle": "商品列表",
+    "goodsTitle1": "商品1",
+    "goodsTitle2": "商品2",
+    "goodsContent1": "这是商品1的内容",
+    "goodsContent2": "这是商品2的内容",
+    "detailTitle": "商品详情",
+    "idLabel": "ID"
+  },
+  "theme": {
+    "current": "当前主题",
+    "light": "默认(红)",
+    "yellow": "黄色主题",
+    "blue": "蓝色主题",
+    "dark": "暗黑模式"
+  },
+  "language": {
+    "switch": "切换语言"
+  }
+}
