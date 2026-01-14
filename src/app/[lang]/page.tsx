@@ -2,7 +2,7 @@
  * @Author: 孙林 1164700321@qq.com
  * @Date: 2026-01-09 11:00:00
  * @LastEditors: 孙林
- * @LastEditTime: 2026-01-09 11:11:01
+ * @LastEditTime: 2026-01-13 20:04:30
  * @Description: 
  */
 'use client'
@@ -45,8 +45,9 @@ export default function Home({ params }: { params: Promise<{ lang: Language }> }
         </div>
       </div>
 
+
       <div className="pt-4 text-xl">{t('home.defaultColor')}</div>
-      <div className="text-primary text-xl dark:text-primary-black">{t('home.customColor')}</div>
+      <div className="text-primary text-xl">{t('home.customColor')}</div>
 
       <div className="pt-4 text-xl cursor-pointer" onClick={() => goPage("/news")}>{t('home.goToNews')}</div>
       <div className="pt-4 text-xl cursor-pointer" onClick={() => goPage("/goods")}>{t('home.goToGoods')}</div>
