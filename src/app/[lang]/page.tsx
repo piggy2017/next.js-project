@@ -2,7 +2,7 @@
  * @Author: 孙林 1164700321@qq.com
  * @Date: 2026-01-09 11:00:00
  * @LastEditors: 孙林
- * @LastEditTime: 2026-01-13 20:04:30
+ * @LastEditTime: 2026-01-27 16:51:00
  * @Description: 
  */
 'use client'
@@ -12,7 +12,8 @@ import { useRouter } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
 import { type Language } from '@/i18n/config';
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
-import { use } from 'react';
+import { use, useEffect } from 'react';
+import { login } from '@/lib/api-helper';
 
 export default function Home({ params }: { params: Promise<{ lang: Language }> }) {
   const { lang } = use(params);
@@ -22,6 +23,21 @@ export default function Home({ params }: { params: Promise<{ lang: Language }> }
   const goPage = (path: string) => {
     router.push(`/${lang}${path}`);
   };
+
+
+  useEffect(() => {
+    const doLogin = async () => {
+      // 现在可以直接传递参数，无需包装 body
+      const res = await login({ 
+        username: 'test', 
+        password: 'test', 
+        code: '', 
+        uuid: '' 
+      });
+      console.log(res);
+    };
+    doLogin();
+  }, []);
 
   return (
     <div className="min-h-screen bg-zinc-50 font-sans dark:bg-brand-500">
