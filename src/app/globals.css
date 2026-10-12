@@ -46,6 +46,10 @@
   --theme-text: #f8fafc;
   /* 在暗黑模式下，Primary 颜色可能需要微调 */
   --theme-primary: #f472b6;
+  /* body 读取的是 --background / --foreground，必须在此同步覆写，
+     否则切到暗色时页面底色仍停留在 :root 的白色 */
+  --background: #0f172a;
+  --foreground: #f8fafc;
 }
 
 :root {
@@ -53,11 +57,9 @@
   --foreground: #171717;
 }
 
-:root.dark {
-  --background: #1f2937;
-  --foreground: #ededed;
-}
-
+/* 说明：原 :root.dark 依赖 <html class="dark">，而 next-themes 使用
+   attribute="data-theme" 只写属性、不加类名，该选择器永远不会命中，
+   已将其职责合并进上面的 [data-theme="dark"] 变量块 */
 
 /* 媒体查询模式--暗黑模式 */
 /* @media (prefers-color-scheme: dark) {
@@ -78,8 +80,10 @@ body {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* 自定义变体 dark */
-@custom-variant dark (&:where(.dark, .dark *));
+/* 自定义变体 dark
+   必须与 next-themes 的 attribute="data-theme" 对齐：属性驱动，不是类驱动。
+   若写成 (&:where(.dark, .dark *))，则 .dark 类永远不会被添加，所有 dark: 工具类全部失效 */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 
 /* @apply 指令，可以在 CSS 文件中将一组常用的工具类组合成一个自定义的类，这样就可以减少 HTML 中的重复代码 */

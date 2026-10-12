@@ -18,7 +18,7 @@ export default function Home() {
     router.push(path);
   };
   return (
-    <div className="min-h-screen  bg-zinc-50 font-sans dark:bg-brand-500">
+    <div className="min-h-screen bg-zinc-50 font-sans dark:bg-bg-base">
       <ThemeToggle />
       <div className="h-2/3 bg-bg-base p-10 transition-colors duration-300">
 
@@ -38,7 +38,7 @@ export default function Home() {
       </div>
 
       <div className="pt-4 text-xl">默认颜色</div>
-      <div className="text-primary text-xl dark:text-primary-black">测试自定义颜色</div>
+      <div className="text-primary text-xl dark:text-text-base">测试自定义颜色</div>
 
       <div className="pt-4 text-xl cursor-pointer" onClick={() => goPage("/news")}>前往新闻列表</div>
       <div className="pt-4 text-xl cursor-pointer" onClick={() => goPage("/goods")}>前往商品列表</div>

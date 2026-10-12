@@ -1,4 +1,5 @@
 import ThemeProvider from "./components/theme-context"
+import { THEMES, DEFAULT_THEME } from "./components/theme"
 import "./globals.css"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -7,11 +8,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh" suppressHydrationWarning>
       <body>
         {/* attribute="data-theme" 是关键，它对应我们在 CSS 中写的 [data-theme="..."] 选择器 */}
-        <ThemeProvider 
-          attribute="data-theme" 
-          defaultTheme="system" 
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme={DEFAULT_THEME}
           enableSystem
-          themes={['light', 'dark', 'yellow', 'blue']} // 在这里注册你的主题名
+          // 主题名单一来源在 components/theme.ts，展开后满足 next-themes 的 string[] 签名
+          themes={[...THEMES]}
         >
           {children}
         </ThemeProvider>
