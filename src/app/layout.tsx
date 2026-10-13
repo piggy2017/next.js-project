@@ -11,6 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider
           attribute="data-theme"
           defaultTheme={DEFAULT_THEME}
+          // 不跟随系统的 dark/light 模式切换，而是始终使用用户上次选择的主题
           enableSystem
           // 主题名单一来源在 components/theme.ts，展开后满足 next-themes 的 string[] 签名
           themes={[...THEMES]}

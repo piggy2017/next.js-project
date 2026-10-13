@@ -21,6 +21,9 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-50 font-sans dark:bg-bg-base">
       <ThemeToggle />
       <div className="h-2/3 bg-bg-base p-10 transition-colors duration-300">
+        <div className="mb-4 border-primary border-b-2 pb-2">
+          hahhahhaa
+        </div>
 
         {/* text-primary 会根据主题变成 红色、黄色 或 蓝色 */}
         <h1 className="text-4xl font-bold text-primary mb-4">
